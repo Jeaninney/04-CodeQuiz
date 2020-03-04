@@ -4,9 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Question Game</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand mb-1 h1">Jeaninney's Super Fun Javascript Quiz</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" id="highscores">
+          <p>Highscores</p>
+        </div>
+        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 text-center">
+            <h1>Welcome to the Javascript code quiz</h1>
+            <button id="start">Test your knowledge now!</button>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" id="timer">
+        </div>
+    </div>
+</div>
 
   <script>
 
