@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Question Game</title>
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Added link to the jQuery Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<!-- Added a link to Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -19,83 +21,21 @@
   </nav>
 <div class="container">
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" id="highscores">
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" id="highscores" id="score-block">
           <p>Highscores</p>
         </div>
-        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 text-center">
-            <h1>Welcome to the Javascript code quiz</h1>
-            <button id="start">Test your knowledge now!</button>
+        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 text-center" id="mid-block">
+            <!-- <h1>Welcome to the Javascript code quiz</h1> -->
+            <!-- <p></p>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="start">Test your knowledge now!</button> -->
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" id="timer">
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 text-right" id="time-block">
+          time here
         </div>
     </div>
 </div>
+<script src="./script.js"></script>
 
-  <script>
-
-    // The array of questions for our quiz game.
-    var questions = [
-      { q: "What is the correct way to write a JavaScript array?", 
-        a: "var colors = [\"red\", \"green\", \"blue\"]",
-        b: "var colors = 1 = (\"red\"), 2 = (\"green\"), 3 = (\"blue\")",
-        c: "var colors = (1:\"red\", 2:\"green\", 3:\"blue\")",
-        d: "var colors = \"red\", \"green\", \"blue\"",
-        ans: "a" 
-        },
-      { q: "Which event occurs when the user clicks on an HTML element?", 
-        a: "onmouseover",
-        b: "onchange",
-        c: "onclick",
-        d: "onmouseclick",
-        ans: "c"
-        },
-      { q: "How do you round the number 7.25, to the nearest integer?", 
-        a: "round(7.25)",
-        b: "rnd(7.25)",
-        c: "Math.rnd(7.25)",
-        d: "Math.round(7.25)",
-        ans: "d" 
-        },
-      { q: "Inside which HTML element do we put the JavaScript?", 
-        a: "<javascript>",
-        b: "<script>",
-        c: "<js>",
-        d: "<scripting>",
-        ans: "b" 
-        },
-      { q: "How do you write \"Hello World\" in an alert box?", 
-        a: "alertBox(\"Hello World\");",
-        b: "msgBox(\"Hello World\");",
-        c: "msg(\"Hello World\");",
-        d: "alert(\"Hello World\");",
-        ans: "d" 
-        }
-    ];
-
-    // We start the game with a score of 0.
-    var score = 0;
-
-    // Loop over every question object
-    for (var i = 0; i < questions.length; i++) {
-      // Display current question to user and ask OK/Cancel
-    //   var answer = confirm(questions[i].q);
-
-    //   // Compare answers
-    //   if ((answer === true && questions[i].a === "t") ||
-    //     (answer === false && questions[i].a === "f")) {
-    //     // Increase score
-    //     score++;
-    //     alert("Correct!");
-    //   }
-    //   else {
-    //     alert("Wrong!");
-    //   }
-    // }
-
-    // // Show total at end
-    // alert("You got " + score + "/" + questions.length);
-    }
-  </script>
 
 </body>
 
