@@ -40,16 +40,11 @@ var questions = [
   ];
 
 // Set variables global to the runtime of the application
-  var currentQuestion = "";
-  var buttonA;
-  var buttonB;
-  var buttonC;
-  var buttonD;
+  var buttona;
+  var buttonb;
+  var buttonc;
+  var buttond;
   
-// We start the game with a score of 0.
-  var score = 0;
-
-
 // this function brings up the introductory page of the game.
   function initializeGame() {
     str = "<h1>Welcome to the Javascript code quiz</h1>";
@@ -64,11 +59,117 @@ var questions = [
 
     // this is what triggers the game to start when the button is clicked
     $("#start").click(function (){
-        alert("the game is started.")
+        // Loads the first question
+        LoadQuestion(0);
     })
 
-}  
+  }  
+
+// this loads the questions with selection buttons, 1 at a time, saves the answers, and tallies the score
+  function LoadQuestion(i) {
+
+    while (i<4) {
+    var qBlock = $("#mid-block");
+    // this clears the area that the questions will be posted in
+    qBlock.empty();
+    // This posts for the text of the question
+    var currentQuestion = $("<h2>" + questions[i].q + "</h2>");
+    qBlock.append(currentQuestion);
+
+    // Generate the buttons for each of the multiple choice questions
+    // $("#mid-block").text(questions[i].q);
+    var newP = $("<br> <br>");
+    
+    qBlock.append(newP);
+
+    var buta = $("<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" id=\"btna\">" + questions[i].a + "</button>");
+    qBlock.append(buta);
+    qBlock.append(newP);
+
+    var butb = $("<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" id=\"btnb\">" + questions[i].b + "</button>");
+    qBlock.append(butb);
+    qBlock.append(newP);
+
+    var butc = $("<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" id=\"btnc\">" + questions[i].a + "</button>");
+    qBlock.append(butc);
+    qBlock.append(newP);
+
+    var butd = $("<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" id=\"btnd\">" + questions[i].a + "</button>");
+    qBlock.append(butd);
+    qBlock.append(newP);
+
+
+
+    $("#btna").on("click" (function (){
+      ///////////////////////////////////////////////
+      if (questions[i].ans != "a") {
+        //reduce time
+        alert("Wrong")
+      }
+      else {
+        alert("That's right!")
+      }
+    }))
+
+    $("#btnb").click(function (){
+      ///////////////////////////////////////////////
+      if (questions[i].ans != "b") {
+        //reduce time
+        alert("Wrong")
+      }
+      else {
+        alert("That's right!")
+      }
+    })
+
+    $("#btnc").click(function (){
+      ///////////////////////////////////////////////
+      if (questions[i].ans != "c") {
+        //reduce time
+        alert("Wrong")
+      }
+      else {
+        alert("That's right!")
+      }
+    })
+
+    $("#btnd").click(function (){
+      ///////////////////////////////////////////////
+      alert("button D Clicked")
+      if (questions[i].ans != "D") {
+        //reduce time
+        alert("Wrong")
+      }
+      else {
+        alert("That's right!")
+      }
+    })
+
+      i++;
+    }
+    // for (k=0; k<4; k++){
+    //   var whichButton = alpha[k];
+    //   btn[k] = $("<button type=\"button\" class=\"btn btn-success\" ans=" + alpha[k] + ">" + questions.alpha[k] + "</button");
+    //   // btn[k].setAttribute("type", "button");
+    //   // btn[k].setAttribute("class", "btn btn-success");
+    //   // btn[k].setAttribute("id", "button" + whichButton);
+    //   qBlock.append(btn[k]);
+    //   // btn[k].textContent = (questions[i].whichButton);
+    //   // $("#mid-block").append("<p></p>");
+    //   // $("#mid-block").append(btn.k);
+    // }
+ 
+
+
+  
+}
+
+
 initializeGame();
+
+
+
+var i = 0
 
 
 
